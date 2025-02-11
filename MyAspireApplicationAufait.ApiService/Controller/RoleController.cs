@@ -36,8 +36,7 @@ namespace MyAspireApplicationAufait.ApiService.Controller
             try
             {
                  var createdRole = await _roleService.CreateRoleAsync(role);
-                return createdRole;
-               // return 1;
+                return createdRole;              
             }
             catch (System.Exception ex)
             {
