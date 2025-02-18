@@ -6,21 +6,22 @@ using Microsoft.EntityFrameworkCore;
 using MyAspireApplicationAufait.ApiService.Application.Interfaces;
 using MyAspireApplicationAufait.ApiService.Infrastructure.Entities;
 using MyAspireApplicationAufait.AppHost.Domain;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MyAspireApplicationAufait.ApiService.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class RoleController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-        public readonly IRoleAppService _roleService;  // Correctly declare IRoleAppService
-
-        // Inject ApplicationDbContext and IRoleAppService in the constructor
+        public readonly IRoleAppService _roleService;  
+      
         public RoleController(ApplicationDbContext context, IRoleAppService roleService)
         {
             _context = context;
-            _roleService = roleService; // Initialize _roleService with injected roleService
+            _roleService = roleService; 
         }
 
         [HttpPost("api/SignIn")]
@@ -31,6 +32,7 @@ namespace MyAspireApplicationAufait.ApiService.Controller
         }
 
         [HttpPost("api/roles")]
+        [Authorize]
         public async Task<long> CreateRole(RoleDto role)
         {            
             try

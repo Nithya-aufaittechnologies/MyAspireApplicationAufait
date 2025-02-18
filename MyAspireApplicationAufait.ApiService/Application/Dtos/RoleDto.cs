@@ -8,7 +8,7 @@ namespace MyAspireApplicationAufait.AppHost.Domain
 {
     public class RoleDto
     {
-        public string? Id { get; set; }
+        public int Id { get; set; }
         public DateTime? CreatedAt { get; set; }
         public string? createdBy { get; set; }
         public DateTime? UpdatedAt { get; set; }
