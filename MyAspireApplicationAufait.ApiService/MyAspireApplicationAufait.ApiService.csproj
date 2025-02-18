@@ -4,6 +4,8 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <UserSecretsId>deb15de0-6f07-4e56-8d85-e8e4e05702cb</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,6 +23,7 @@
 	  <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="8.0.12" />
 	  <PackageReference Include="Microsoft.Identity.Web" Version="3.7.0" />
 	  <PackageReference Include="Microsoft.Identity.Web.MicrosoftGraph" Version="3.7.0" />
+	  <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
 	  <PackageReference Include="Moq" Version="4.20.72" />
 	  <PackageReference Include="MSTest.TestFramework" Version="3.8.0" />
 	  <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.3" />
