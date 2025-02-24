@@ -1,0 +1,51 @@
+openapi: 3.0.0
+info:
+  title: Sample API
+  description: API for managing users.
+  version: 1.0.0
+paths:
+  /users:
+    get:
+      summary: Get all users
+      description: Returns a list of all users
+      responses:
+        200:
+          description: A list of users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      description: The user's unique ID
+                    name:
+                      type: string
+                      description: The user's name
+  /users/{id}:
+    get:
+      summary: Get a specific user by ID
+      description: Returns a single user based on their ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the user
+          schema:
+            type: integer
+      responses:
+        200:
+          description: The requested user
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+        404:
+          description: User not found
